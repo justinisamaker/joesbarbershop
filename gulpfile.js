@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
+    sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
@@ -51,7 +52,26 @@ gulp.task('styles', function() {
     .pipe(reload({stream:true})));
 });
 
+// JAVASCRIPT TASK
+gulp.task('javascript', function(){
+    gulp.src(basePaths.theme + '/js-src/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('bundle.js'))
+        .pipe(uglify()) 
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(basePaths.theme + '/js/'))
+        .pipe(reload({stream:true}));
+});
+
+// PHP TASK
+gulp.task('php', function(){
+    gulp.src('wp-content/themes/barber/*.php')
+        .pipe(reload({stream:true}));
+})
+
 // WATCH
-gulp.task('default', ['styles', 'browsersync'], function(){
-    gulp.watch(basePaths.theme + '/scss/**/*.scss',['styles']);
+gulp.task('default', ['styles', 'browsersync', 'javascript', 'php'], function(){
+    gulp.watch(basePaths.theme + '/scss/**/*.scss', ['styles']);
+    gulp.watch(basePaths.theme + '/js-src/**/*.js', ['javascript']);
+    gulp.watch('wp-content/themes/barber/*.php', ['php']);
 });
