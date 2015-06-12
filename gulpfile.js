@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     plumber = require('gulp-plumber'),
+    browsersync = require('browser-sync'),
     del = require('del');
 
 // SET THEME PATH
@@ -22,6 +23,21 @@ var onError = function(err){
     console.log(err);
 };
 
+// SET UP BROWSERSYNC
+var reload = browsersync.reload;
+
+gulp.task('browsersync', function() {
+    var files = [
+        basePaths.theme + '/css/**/*',
+        basePaths.theme + '/*.php'
+    ];
+ 
+    browsersync.init(files, {
+        proxy: "localhost/joesbarbershop/",
+        notify: false
+    });
+});
+
 // STYLES TASK
 gulp.task('styles', function() {
   gulp.src(basePaths.theme + '/scss/**/*.scss')
@@ -31,10 +47,11 @@ gulp.task('styles', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest(basePaths.theme + '/css'))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(notify({ message: 'Styles task complete' })
+    .pipe(reload({stream:true})));
 });
 
 // WATCH
-gulp.task('default', function(){
+gulp.task('default', ['styles', 'browsersync'], function(){
     gulp.watch(basePaths.theme + '/scss/**/*.scss',['styles']);
 });
