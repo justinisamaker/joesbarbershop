@@ -1,0 +1,21 @@
+
+{
+  "name": "joesbarbershop",
+  "version": "0.0.0",
+  "authors": [
+    "Justin Smith <justin@isamaker.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "breakpoint-sass": "~2.5.0",
+    "susy": "~2.2.2"
+  },
+  "devDependencies": {
+    "breakpoint-sass": "~2.5.0"
+  }
+}
