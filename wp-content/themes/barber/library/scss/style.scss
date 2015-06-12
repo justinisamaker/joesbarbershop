@@ -41,6 +41,21 @@ the whole project.
 // the grid
 @import "partials/grid";
 
+/* ==========================================================================
+   SUSY GRID
+   ========================================================================== */
+
+@import "./bower_components/susy/sass/susy";
+@import "./bower_components/breakpoint-sass/stylesheets/breakpoint";
+
+$susy: (
+  columns: 12, 
+  container: 1140px,
+  gutters: 0.25,
+  global-box-sizing: border-box,
+  debug: (image: show-columns)
+);
+
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
