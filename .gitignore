@@ -11,3 +11,18 @@ wp-content/cache/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
+
+# Local configs
+local-config.php
+
+# Mac
+.DS_Store
+
+## Development
+.sass-cache
+bower_components
+node_modules
+vendor
+build
+dist
+_normalize.scss
