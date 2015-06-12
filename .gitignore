@@ -16,7 +16,8 @@ wp-content/wp-cache-config.php
 local-config.php
 
 # generated files
-/wp-content/themes/barber/library/css/**/*
+/wp-content/themes/barber/library/css/**/*.css
+/wp-content/themes/barber/library/js/**/*.js
 
 # Mac
 .DS_Store
