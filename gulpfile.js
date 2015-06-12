@@ -22,6 +22,7 @@ var onError = function(err){
     console.log(err);
 };
 
+// STYLES TASK
 gulp.task('styles', function() {
   gulp.src(basePaths.theme + '/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -31,4 +32,9 @@ gulp.task('styles', function() {
     .pipe(minifycss())
     .pipe(gulp.dest(basePaths.theme + '/css'))
     .pipe(notify({ message: 'Styles task complete' }));
+});
+
+// WATCH
+gulp.task('default', function(){
+    gulp.watch(basePaths.theme + '/scss/**/*.scss',['styles']);
 });
