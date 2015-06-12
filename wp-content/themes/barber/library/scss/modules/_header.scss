@@ -1,0 +1,29 @@
+/* ==========================================================================
+   HEADER STYLES
+   ========================================================================== */
+
+@import "../libs/responsive-nav";
+
+.header{
+	@include span(12);
+	background:$black;
+	border-top:em(5px) solid $gray;
+	padding-top:em(10px);
+	padding-bottom:em(13px);
+}
+
+// LOGO
+#logo{
+	@include span(4);
+	@include push(4);
+}
+
+.logo-text{
+	display:none;
+}
+
+// NAV
+.top-nav{
+	@include span(12);
+	background:red;
+}
