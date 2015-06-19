@@ -65,7 +65,7 @@ gulp.task('javascript', function(){
 
 // PHP TASK
 gulp.task('php', function(){
-    gulp.src('wp-content/themes/barber/*.php')
+    gulp.src('wp-content/themes/barber/**/*.php')
         .pipe(reload({stream:true}));
 })
 
