@@ -45,6 +45,40 @@ function bones_ahoy() {
 
   // enqueue base scripts and styles
   add_action( 'wp_enqueue_scripts', 'bones_scripts_and_styles', 999 );
+
+  // debug to console function
+  function debug_to_console( $data ) {
+
+      if ( is_array( $data ) )
+          $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
+      else
+          $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+
+      echo $output;
+  }
+
+  function template_css(){
+    // home template styles
+    if(is_page_template('templates/home-template.php')){
+      wp_register_style('home', get_template_directory_uri() . '/library/css/pages/home.css', array(), '1', 'all' );
+      wp_enqueue_style('home');
+    } elseif(is_page_template('templates/history-template.php')){
+      wp_register_style('history', get_template_directory_uri() . '/library/css/pages/history.css', array(), '1', 'all' );
+      wp_enqueue_style('history');
+    } elseif(is_page_template('templates/barbers-template.php')){
+      wp_register_style('barbers', get_template_directory_uri() . '/library/css/pages/barbers.css', array(), '1', 'all' );
+      wp_enqueue_style('barbers');
+    } elseif(is_page_template('templates/blog-template.php')){
+      wp_register_style('blog', get_template_directory_uri() . '/library/css/pages/blog.css', array(), '1', 'all' );
+      wp_enqueue_style('blog');
+    } elseif(is_page_template('templates/contact-template.php')){
+      wp_register_style('contact', get_template_directory_uri() . '/library/css/pages/contact.css', array(), '1', 'all' );
+      wp_enqueue_style('contact');
+    }
+  } // end template_css
+
+  add_action('wp_enqueue_scripts', 'template_css');
+
   // ie conditional wrapper
 
   // launching this stuff after theme setup
