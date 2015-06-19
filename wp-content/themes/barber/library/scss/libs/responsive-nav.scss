@@ -1,5 +1,7 @@
 /*! responsive-nav.js 1.0.39 by @viljamis */
 
+@import "../partials/breakpoints";
+
 .nav-collapse ul {
   margin: 0;
   padding: 0;
@@ -36,7 +38,7 @@
   user-select: none;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: $medium) {
   .js .nav-collapse {
     position: relative;
   }
