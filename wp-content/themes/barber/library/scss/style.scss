@@ -7,14 +7,12 @@
 
 // PARTIALS
 @import "partials/normalize";
-
 @import "partials/variables";
-
 @import "partials/typography";
-
 @import "partials/mixins";
-
+@import "partials/breakpoints";
 @import "partials/grid";
+@import "partials/links";
 
 // BASE STYLES
 @import "base";
