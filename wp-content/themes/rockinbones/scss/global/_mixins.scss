@@ -1,0 +1,54 @@
+/* ==============================================
+	MIXINS.SCSS
+	A collection of useful mixins
+============================================== */
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// PIXEL TO EM CONVERSION - http://vvv.tobiassjosten.net/css/px-to-em-with-sass/
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+// LINK STYLE OVERRIDE
+@mixin no-link-styles(){
+	text-decoration:none;
+
+	&:hover, &:focus, &:active{
+		text-decoration:none;
+		color:inherit;
+	}
+}
+
+// TRANSITIONS / ANIMATIONS
+@mixin transition($what: all, $length: 1s, $easing: ease-in-out) {
+  transition:$what $length $easing;
+}
+
+// REMOVE MARGIN AND PADDING
+@mixin no-space(){
+	margin:0;
+	padding:0;
+}
+
+// REMOVE ANY CSS APPEARANCE RULES
+@mixin no-appearance(){
+  -webkit-appearance:none !important;
+  -moz-appearance:none !important;
+  appearance:none !important;
+  text-shadow:none !important;
+  outline:none !important;
+  -webkit-box-shadow:none !important;
+  -moz-box-shadow:none !important;
+  box-shadow:none !important;
+  border-radius:0;
+}

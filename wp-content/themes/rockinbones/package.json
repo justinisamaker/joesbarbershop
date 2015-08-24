@@ -1,0 +1,33 @@
+{
+  "name": "enlastablas",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justinisamaker/enlastablas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinisamaker/enlastablas/issues"
+  },
+  "homepage": "https://github.com/justinisamaker/enlastablas",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "del": "^1.2.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "run-sequence": "^1.1.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-notify": "^2.2.0",
+    "browser-sync": "^2.8.2",
+    "bower": "^1.5.1"
+  }
+}

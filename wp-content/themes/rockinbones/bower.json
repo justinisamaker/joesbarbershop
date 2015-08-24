@@ -1,0 +1,20 @@
+{
+  "name": "enlastablas",
+  "version": "0.0.0",
+  "homepage": "https://github.com/justinisamaker/enlastablas",
+  "authors": [
+    "justintsmith <justin@justintsmith.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "compass-breakpoint": "breakpoint-sass#~2.6.1",
+    "susy": "~2.2.5"
+  }
+}

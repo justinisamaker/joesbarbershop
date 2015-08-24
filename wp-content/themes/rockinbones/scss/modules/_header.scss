@@ -1,0 +1,62 @@
+/* ==============================================
+	HEADER.SCSS
+	Page styles for the header module
+============================================== */
+
+.site-header{
+	border-top:0.3em solid $blue;
+	border-bottom:1px solid $darkGray;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	background:url('/img/stardust2.png') repeat;
+	@include span(12);
+}
+
+#logo-container{
+	@include span(3); 
+
+	img{
+		@include no-space;
+		display:block;
+		position:relative;
+		width:50%;
+		@include transition(background, 0.1s, ease-in-out);
+		background:$white;
+	}
+
+	a{
+		&:before{
+			display:none;
+		}
+
+		&:hover{
+			img{
+				background:$lightBlue;
+				@include transition(background, 0.1s, ease-in-out);
+			}
+		}
+	}
+}
+
+@include breakpoint($small){
+	#logo-container{
+		@include span(2);
+	}
+}
+
+@include breakpoint($medium){
+	
+}
+
+@include breakpoint($large){
+	#logo-container{
+		@include span(1);
+	}
+}
+
+@include breakpoint($extra-large){
+	// #logo-container{
+	// 	@include span(2);
+	// }
+}
+
