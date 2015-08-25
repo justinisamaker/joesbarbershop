@@ -42,23 +42,6 @@
             <li><span>Sunday:</span> 10:00 AM - 2:00 PM</li>
           </ul>
         </div>
-
-        <!-- Contact
-        773-252-3980
-        ShopInfo@joesBarberShopChicago.com
-
-        Address
-        2641 W Fullerton Avenue
-        Chicago, IL 60647
-
-        Hours
-        Monday: Shop Closed
-        Tuesday: 9:00am - 5:30pm
-        Wednesday: 9:00am - 5:30pm
-        Thursday: 9:00am - 7:30pm
-        Friday: 9:00am - 5:30pm
-        Saturday: 9:00am - 3:00pm
-        Sunday: 10:00am - 2:00pm -->
       </section>
 
       <section id="events">
@@ -107,6 +90,10 @@
               ?>
             </div>
           <?php endwhile; endif; wp_reset_postdata(); ?>
+        </div>
+
+        <div id="shop-container">
+          <a href="/shop" id="shop-button" class="btn btn-blue">Buy a Barbershop T-shirt</a>
         </div>
       </section>
 

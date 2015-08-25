@@ -10,19 +10,16 @@
 	@include no-link-styles;
 	font-weight:700;
 	letter-spacing:0.1em;
-	color:$white;
 	text-align: center;
   white-space: nowrap;
   display: block;
   user-select: none;
-  padding:0.8em 1em 1.2em 1em;
+  padding:0.8em 1em;
   cursor:pointer !important;
 }
 
 .btn:hover,
 .btn:focus {
-  background:$darkBlue;
-  color:$white;
   @include transition(all, 0.1s, linear);
   cursor:pointer !important;
 
@@ -39,8 +36,13 @@
 
 // BLUE BUTTONS
 .btn-blue{
-	border:1px solid $blue;
-	color:$blue;
+	color:$white;
+  background:$lightBlue;
+
+  &:hover{
+    background:$white;
+    color:$lightBlue;
+  }
 }
 
 .right-arrow{
