@@ -77,19 +77,46 @@ html{
 
 #shop-info{
   @include span(6);
+  padding:0;
+  border-right:1px solid $white;
 }
 
-#shop-prices{
-  li{
-    @include body-copy;
-    color:$white;
+.info-section{
+  padding:2em;
+  padding-bottom:4em;
 
-    span{
-      font-weight:700;
+  &#prices{
+    margin-bottom:2em;
+    border-bottom:1px solid $white;
+  }
+
+  h3{
+    @include rokkitt;
+    font-size:4em;
+    color:$lightBlue;
+  }
+
+  .underline{
+    width:em(200px);
+    border-top:1px solid $white;
+    display:block;
+    position:relative;
+    margin:em(1px) 0 em(20px) 0;
+  }
+
+  ul{
+    li{
+      @include rokkitt;
+      color:$lightBlue;
+      font-size:2em;
+      letter-spacing:1px;
+
+      span{
+        color:$white;
+      }
     }
   }
 }
-
 
 /* ==========================================================================
    EVENTS SECTION
@@ -97,15 +124,13 @@ html{
 
 #events{
   @include span(6);
-  border:1px solid red;
-  padding-top:2em;
 }
 
-// #events-container{
-//   padding-right:1em;
-// }
+#events-container{
+  padding:2em;
+}
 
-#event-info{
+.event-info{
   @include span(6);
 
   h3{
@@ -113,16 +138,43 @@ html{
     color:$lightBlue;
     font-size:2.5em;
     line-height:1em;
+    margin-bottom:em(2px);
   }
 
   h5{
     @include open-sans;
-    font-size:1em;
+    font-size:1.2em;
     color:$white;
+    line-height:1.5em;
+
+    &.event-date{
+      border-bottom:1px solid $white;
+      padding-bottom:em(5px);
+      margin-bottom:em(5px);
+    }
+
+    &.event-time{
+      margin-bottom:em(10px);
+    }
+  }
+
+  p{
+    @include open-sans;
+    font-size:1.1em;
+    line-height:1.4em;
+    color:$white;
+  }
+
+  a{
+    font-size:1.1em;
+    line-height:1.4em;
+    margin-top:em(10px);
+    display:block;
+    position:relative;
   }
 }
 
-#event-photo{
+.event-photo{
   @include span(6);
 
   img{
@@ -130,3 +182,72 @@ html{
     height:auto;
   }
 }
+
+#location{
+  @include span(12);
+  padding:2em 0;
+  border-top:1px solid $white;
+  background:url('/joesbarbershop/wp-content/themes/rockinbones/dist/img/joes-sign.jpg') no-repeat center center;
+    background-size:cover;
+
+  a{
+    @include rokkitt;
+    color:$lightBlue;
+    display:block;
+    text-align:center;
+    font-size:2em;
+    line-height:1.3em;
+    letter-spacing:1px;
+
+    &:hover{
+      color:$black;
+    }
+  }
+}
+
+#location-container{
+  @include span(6);
+  @include push(3);
+  background:$white;
+  opacity:0.8;
+  padding-top:2em;
+  padding-bottom:2em;
+}
+
+/* ==========================================================================
+   SOCIAL SECTION
+   ========================================================================== */
+#home-social{
+  @include span(12);
+  padding-top:1.5em;
+  padding-bottom:1.5em;
+  border-top:1px solid $white;
+}
+
+#home-social-container{
+  @include clearfix;
+  margin:0 auto;
+  display:table;
+
+  a{
+    position:relative;
+    display:table-cell;
+    width:50px;
+    height:50px;
+    border:1px solid $white;
+    float:left;
+    margin-right:em(10px);
+    transition:background, 0.1s, linear;
+
+    &:hover{
+      background:$lightBlue;
+      transition:background, 0.1s, linear;
+    }
+
+    &:last-child{
+      margin-right:0;
+    }
+  }
+}
+
+
