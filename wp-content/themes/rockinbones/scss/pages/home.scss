@@ -145,6 +145,7 @@ html{
 
 .event-info{
   @include span(6);
+  padding-right:em(20px);
 
   h3{
     @include rokkitt;
