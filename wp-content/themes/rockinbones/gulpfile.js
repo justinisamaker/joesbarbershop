@@ -39,7 +39,7 @@ gulp.task('browsersync', function(){
   ];
 
   browserSync.init(files, {
-    proxy: 'localhost/enlastablas'
+    proxy: 'localhost/joesbarbershop'
   });
 });
 

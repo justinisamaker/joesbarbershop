@@ -7,18 +7,15 @@
 			- https://github.com/briangonzalez/fontprep
 ============================================== */
 
-// THE BASE FOLDER FOR ALL YOUR FONTS
-$fontDir: '/fonts';
-
-@mixin raleway(){
-	font-family: 'Raleway', Helvetica, Arial, Verdana, sans-serif;
+@mixin rokkitt(){
+	font-family: 'Rokkitt', Helvetica, Arial, Verdana, sans-serif;
 	font-weight:400;
 	line-height:1em;
 }
 
-@mixin raleway-bold(){
-	font-family: 'Raleway', Helvetica, Arial, Verdana, sans-serif;
-	font-weight:700;
+@mixin open-sans(){
+	font-family: 'Open Sans', Helvetica, Arial, Verdana, sans-serif;
+	font-weight:400;
 	line-height:1em;
 }
 

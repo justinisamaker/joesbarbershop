@@ -1,5 +1,5 @@
-    <footer>
-      <p>Copyright &copy;<?php echo date('Y'); ?></p>
+    <footer id="main-footer">
+      <p>&copy; <?php echo date('Y'); ?> Joe's Barbershop Chicago</p>
     </footer>
 
   </div> <!-- END MAIN CONTAINER -->

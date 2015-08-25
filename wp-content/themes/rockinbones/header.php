@@ -10,7 +10,11 @@
 
     <div id="main-container" class="container-fluid">
 
-      <nav>
+      <header id="main-header">
+        <img id="logo" src="<?php echo get_template_directory_uri(); ?>/dist/img/joes-logo.svg" alt="Joe's Barbershop Chicago">
+      </header>
+
+      <nav id="primary-menu">
         <?php
           $defaults = array(
             'container' => false,

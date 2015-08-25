@@ -1,6 +1,7 @@
 <?php
   // ADD MENU SUPPORT
   add_theme_support('menus');
+  add_theme_support( 'post-thumbnails' ); 
 
   
 
@@ -37,7 +38,15 @@
 
   add_action( 'wp_enqueue_scripts', 'rockinbones_theme_scripts' );
 
+// ADD FONTS HERE
 
+  function rockinbones_add_fonts(){
+    wp_register_style('rockinbones_add_fonts', 'http://fonts.googleapis.com/css?family=Rokkitt:400,700|Open+Sans:400,700');
+
+    wp_enqueue_style('rockinbones_add_fonts');
+  }
+
+  add_action('wp_print_styles', 'rockinbones_add_fonts');
 
 
 ?>

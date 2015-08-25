@@ -3,3 +3,20 @@
 	Page styles for the header module
 ============================================== */
 
+#main-footer{
+  @include span(12);
+  position:static;
+  bottom:0;
+  margin-top:em(20px);
+  padding-top:em(5px);
+  padding-bottom:em(5px);
+  border-top:1px solid $darkGray;
+
+  p{
+    @include body-copy;
+    font-size:0.8em;
+    color:#666;
+    text-align:right;
+    letter-spacing:1px;
+  }
+}

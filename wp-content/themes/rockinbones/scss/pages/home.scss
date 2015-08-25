@@ -3,3 +3,130 @@
 html{
   background:black;
 }
+
+#hero{
+  @include span(12);
+  height:em(400px);
+  background:url('/joesbarbershop/wp-content/themes/rockinbones/dist/img/joes-header.jpg') no-repeat top center;
+  background-size:cover;
+  border-bottom:1px solid $white;
+}
+
+#intro-copy{
+  @include span(8);
+  @include push(2);
+  background:$white;
+  padding-top:1em;
+  padding-bottom:1.5em;
+  text-align:center;
+  opacity:0.8;
+  margin-top:5.5em;
+
+  h2{
+    @include rokkitt;
+    color:$lightBlue;
+    text-align:center;
+    font-size:8em;
+    text-shadow:3px 3px 0px $black;
+    line-height:1em;
+    margin-bottom:-5px;
+  }
+
+  p{
+    width:80%;
+    margin:0 auto;
+    border-top:3px solid #EFEFEF;
+    padding-top:em(7px);
+    @include open-sans;
+    font-size:1.5em;
+    line-height:1.3em;
+  }
+}
+
+/* ==========================================================================
+   HOME MID-SECTION
+   ========================================================================== */
+
+.home-mid-section{
+  padding-top:em(20px);
+  padding-bottom:em(20px);
+}
+
+/* ==========================================================================
+   RUNDOWN SECTION
+   ========================================================================== */
+
+#rundown{
+  @include span(12);
+  height:auto;
+  background:url('/joesbarbershop/wp-content/themes/rockinbones/dist/img/dark-wall.jpg')repeat top center;
+  border-bottom:1px solid $white;
+
+  h2{
+    @include rokkitt;
+    color:$white;
+    font-size:2em;
+    text-align:center;
+    letter-spacing:1px;
+  }
+}
+
+/* ==========================================================================
+   SHOP INFO SECTION
+   ========================================================================== */
+
+#shop-info{
+  @include span(6);
+}
+
+#shop-prices{
+  li{
+    @include body-copy;
+    color:$white;
+
+    span{
+      font-weight:700;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   EVENTS SECTION
+   ========================================================================== */
+
+#events{
+  @include span(6);
+  border:1px solid red;
+  padding-top:2em;
+}
+
+// #events-container{
+//   padding-right:1em;
+// }
+
+#event-info{
+  @include span(6);
+
+  h3{
+    @include rokkitt;
+    color:$lightBlue;
+    font-size:2.5em;
+    line-height:1em;
+  }
+
+  h5{
+    @include open-sans;
+    font-size:1em;
+    color:$white;
+  }
+}
+
+#event-photo{
+  @include span(6);
+
+  img{
+    width:100%;
+    height:auto;
+  }
+}

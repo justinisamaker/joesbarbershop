@@ -3,60 +3,52 @@
 	Page styles for the header module
 ============================================== */
 
-.site-header{
-	border-top:0.3em solid $blue;
-	border-bottom:1px solid $darkGray;
-	padding-top:0.5em;
-	padding-bottom:0.5em;
-	background:url('/img/stardust2.png') repeat;
+#main-header{
 	@include span(12);
+	height:auto;
+	padding-top:em(20px);
+	padding-bottom:em(30px);
+	background:url('/joesbarbershop/wp-content/themes/rockinbones/dist/img/dark-wall.jpg')repeat top center;
 }
 
-#logo-container{
-	@include span(3); 
+#logo{
+	@include span(2);
+	@include push(5);
+	display:block;
+	position:relative;
+}
 
-	img{
-		@include no-space;
-		display:block;
-		position:relative;
-		width:50%;
-		@include transition(background, 0.1s, ease-in-out);
-		background:$white;
-	}
+#primary-menu{
+	@include span(12);
+	border:1px solid $white;
+	border-width:1px 0;
+}
 
-	a{
-		&:before{
-			display:none;
+.primary-menu{
+	@include clearfix;
+
+	li{
+		float:left;
+		@include span(2);
+		transition:background, 0.1s, linear;
+
+		&:first-child{
+			border-left-width:1px;
 		}
 
 		&:hover{
-			img{
-				background:$lightBlue;
-				@include transition(background, 0.1s, ease-in-out);
-			}
+			background:$lightBlue;
+			transition:background, 0.1s, linear;
+		}
+
+		a{
+			display:block;
+			padding-top:1em;
+			padding-bottom:1em;
+			text-align:center;
+			color:$white;
+			font-size:1.4em;
+			@include rokkitt; 
 		}
 	}
 }
-
-@include breakpoint($small){
-	#logo-container{
-		@include span(2);
-	}
-}
-
-@include breakpoint($medium){
-	
-}
-
-@include breakpoint($large){
-	#logo-container{
-		@include span(1);
-	}
-}
-
-@include breakpoint($extra-large){
-	// #logo-container{
-	// 	@include span(2);
-	// }
-}
-
