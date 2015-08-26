@@ -1,9 +1,9 @@
 <?php
   // ADD MENU SUPPORT
   add_theme_support('menus');
-  add_theme_support( 'post-thumbnails' ); 
+  add_theme_support( 'post-thumbnails' );
 
-  
+
 
   // REGISTER MENUS
   function register_theme_menus(){
@@ -22,7 +22,13 @@
 
   // ADD STYLES HERE
   function rockinbones_theme_styles(){
-    wp_enqueue_style( 'main_css', get_template_directory_uri() . '/dist/css/pages/home.css');
+    wp_enqueue_style( 'main_css', get_template_directory_uri() . '/dist/css/globals.css');
+
+    if ( is_home() ) {
+      wp_enqueue_style( 'home_css', get_template_directory_uri() . '/dist/css/pages/home.css');
+    } else if( is_page_template('page-barbers.php') ){
+      wp_enqueue_style( 'barbers_css', get_template_directory_uri() . '/dist/css/pages/barber.css');
+    }
   }
 
   add_action( 'wp_enqueue_scripts', 'rockinbones_theme_styles' );

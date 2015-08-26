@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var minifyCss = require('gulp-minify-css');
+var autoprefixer = require('gulp-autoprefixer');
 var del = require('del');
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
@@ -24,6 +26,7 @@ var paths = {
   dist: 'dist',
   scss: 'scss',
   css: 'dist/css',
+  csspages: 'dist/css/pages',
   jssrc: 'js-src',
   js: 'dist/js',
   imgsrc: 'images',
@@ -43,11 +46,28 @@ gulp.task('browsersync', function(){
   });
 });
 
-// SASS TASK
-gulp.task('sass', function(){
-  gulp.src(paths.scss + '/**/*')
+// SASS PAGES TASK
+gulp.task('sass-pages', function(){
+  gulp.src(paths.scss + '/pages/**/*')
     .pipe(plumber(errorHandler))
     .pipe(sass())
+    .pipe(autoprefixer({
+      browsers: ['last 4 versions', 'ie 8', 'ie 9']
+    }))
+    .pipe(minifyCss())
+    .pipe(gulp.dest(paths.csspages))
+    .pipe(reload({stream:true}));
+});
+
+// SASS GLOBALS TASK
+gulp.task('sass-globals', function(){
+  gulp.src([ paths.scss + '/globals.scss', paths.scss + '/global/**/*', paths.scss + '/modules/**/*' ])
+    .pipe(plumber(errorHandler))
+    .pipe(sass())
+    .pipe(autoprefixer({
+      browsers: ['last 4 versions', 'ie 8', 'ie 9']
+    }))
+    .pipe(minifyCss())
     .pipe(gulp.dest(paths.css))
     .pipe(reload({stream:true}));
 });
@@ -87,15 +107,16 @@ gulp.task('clean', function(){
 
 // WATCH TASK
 gulp.task('watch', function(){
-  gulp.watch(paths.scss + '/**/*', ['sass']);
+  gulp.watch([ paths.scss + '/global.scss', paths.scss + '/global/**/*', paths.scss + '/modules/**/*' ], ['sass-globals', 'sass-pages']);
+  gulp.watch(paths.scss + '/pages/*', ['sass-pages']);
   gulp.watch(paths.jssrc + '/**/*', ['javascript']);
   gulp.watch(paths.imgsrc + '/**/*', ['images']);
-})
+});
 
 gulp.task('default', function(callback){
   runSequence(
     'clean',
-    ['sass', 'javascript', 'images'],
+    ['sass-globals', 'sass-pages', 'javascript', 'images'],
     ['watch', 'browsersync'],
     callback
   );

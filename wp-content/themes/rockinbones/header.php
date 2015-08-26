@@ -11,7 +11,9 @@
     <div id="main-container" class="container-fluid">
 
       <header id="main-header">
-        <img id="logo" src="<?php echo get_template_directory_uri(); ?>/dist/img/joes-logo.svg" alt="Joe's Barbershop Chicago">
+        <a href="<?php get_bloginfo('url'); ?>">
+          <img id="logo" src="<?php echo get_template_directory_uri(); ?>/dist/img/joes-logo.svg" alt="Joe's Barbershop Chicago">
+        </a>
       </header>
 
       <nav id="primary-menu">

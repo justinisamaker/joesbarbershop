@@ -1,8 +1,4 @@
-@import "../main.scss";
-
-html{
-  background:black;
-}
+@import "../globals.scss";
 
 #hero{
   @include span(12);

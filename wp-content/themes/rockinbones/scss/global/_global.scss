@@ -24,6 +24,7 @@ html, body{
 	width:100%;
 	height:100%;
   @include open-sans;
+  background:$black;
 }
 
 .container-fluid{
@@ -33,6 +34,22 @@ html, body{
 .main-content{
 	@include span(12);
 	@include no-space;
+}
+
+.page-title{
+  @include span(12);
+  @include rokkitt;
+  color:$white;
+  font-size:5em;
+  letter-spacing:1px;
+  text-shadow:2px 2px 0px $lightBlue;
+  line-height:1.3em;
+  text-align:center;
+  padding-top:0.2em;
+  padding-bottom:0.2em;
+  border-bottom:1px solid $lightGray;
+  background:url('/joesbarbershop/wp-content/themes/rockinbones/dist/img/joes-sign.jpg') no-repeat center center;
+  background-size:cover;
 }
 
 

@@ -1,0 +1,68 @@
+@import "../globals.scss";
+
+.barber-listing{
+  @include span(12);
+  border-bottom:1px solid $white;
+  padding-top:3em;
+  padding-bottom:3em;
+}
+
+.barber-photo{
+  @include span(3);
+  @include push(1);
+
+  img{
+    width:100%;
+    height:auto;
+  }
+}
+
+.barber-info{
+  @include span(4);
+  padding-right:2em;
+
+  h2{
+    @include rokkitt;
+    color:$lightBlue;
+    font-size:2em;
+    margin-bottom:em(3px);
+    letter-spacing:1px;
+  }
+
+  p{
+    @include open-sans;
+    font-weight:400;
+    font-size:1.2em;
+    line-height:1.5em;
+    color:$white;
+  }
+}
+
+.barber-hours{
+  @include span(3);
+  border-left:1px solid $white;
+  padding-left:2em;
+  height:100%;
+
+  h2{
+    @include rokkitt;
+    color:$white;
+    font-size:2em;
+    margin-bottom:em(3px);
+    letter-spacing:1px;
+  }
+
+  li{
+    @include open-sans;
+    font-size:1.1em;
+    line-height:1.5em;
+    color:$white;
+
+    span{
+      color:$lightBlue;
+    }
+  }
+}
+
+
+
