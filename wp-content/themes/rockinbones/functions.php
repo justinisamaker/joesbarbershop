@@ -24,16 +24,16 @@
   function rockinbones_theme_styles(){
     wp_enqueue_style( 'main_css', get_template_directory_uri() . '/dist/css/globals.css');
 
-    if ( is_home() ) {
+    if ( is_page_template('page-home.php') ){
       wp_enqueue_style( 'home_css', get_template_directory_uri() . '/dist/css/pages/home.css');
     } else if( is_page_template('page-barbers.php') ){
       wp_enqueue_style( 'barbers_css', get_template_directory_uri() . '/dist/css/pages/barber.css');
+    } else if( is_home() ){
+      wp_enqueue_style( 'blog_css', get_template_directory_uri() . '/dist/css/pages/blog.css');
     }
   }
 
   add_action( 'wp_enqueue_scripts', 'rockinbones_theme_styles' );
-
-
 
 
   // ADD SCRIPTS HERE
@@ -54,5 +54,18 @@
 
   add_action('wp_print_styles', 'rockinbones_add_fonts');
 
+// REGISTER SIDEBARS
+function rockinbones_sidebar() {
+
+  $args = array(
+    'id'            => 'blog-sidebar',
+    'class'         => 'blog-sidebar',
+    'name'          => __( 'Blog Sidebar', 'text_domain' ),
+    'description'   => __( 'Sidebar that shows on blog pages', 'text_domain' ),
+  );
+  register_sidebar( $args );
+
+}
+add_action( 'widgets_init', 'rockinbones_sidebar' );
 
 ?>
