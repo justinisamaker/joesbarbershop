@@ -30,6 +30,8 @@
       wp_enqueue_style( 'barbers_css', get_template_directory_uri() . '/dist/css/pages/barber.css');
     } else if( is_home() ){
       wp_enqueue_style( 'blog_css', get_template_directory_uri() . '/dist/css/pages/blog.css');
+    } else if( is_page_template('page-friends.php') ){
+      wp_enqueue_style( 'friends_css', get_template_directory_uri() . '/dist/css/pages/friends.css');
     }
   }
 

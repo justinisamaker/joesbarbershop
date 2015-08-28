@@ -1,0 +1,62 @@
+@import "../globals.scss";
+
+#friends-container{
+  @include span(10);
+  @include push(1);
+}
+
+.friend-listing{
+  @include span(6);
+  border-bottom:1px solid $white;
+  padding-top:3em;
+  padding-bottom:3em;
+  height:auto;
+  min-height:em(275px);
+
+  &:nth-last-of-type(-n+2) {
+    border-bottom:0;
+  }
+
+  &:nth-child(odd){
+    border-right:1px solid $white;
+  }
+}
+
+.friend-photo{
+  @include span(4);
+  padding-left:1em;
+
+  img{
+    width:100%;
+    height:auto;
+  }
+}
+
+.friend-info{
+  @include span(8);
+  padding-left:1em;
+  padding-right:1em;
+
+  h2{
+    @include rokkitt;
+    color:$lightBlue;
+    font-size:1.7em;
+    margin-bottom:em(3px);
+    letter-spacing:1px;
+  }
+
+  p{
+    @include open-sans;
+    font-weight:400;
+    font-size:1.1em;
+    line-height:1.5em;
+    color:$white;
+  }
+}
+
+.friend-link{
+  font-size:0.9em;
+  top:em(10px);
+  position:relative;
+}
+
