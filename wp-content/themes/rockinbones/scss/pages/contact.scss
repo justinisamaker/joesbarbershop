@@ -1,0 +1,146 @@
+@import "../globals.scss";
+
+#contact-info-container, #contact-form{
+  @include span(10);
+  @include push(1);
+  padding:0;
+}
+
+#contact-info{
+  margin-top:2em;
+  margin-bottom:2em;
+  border-bottom:1px solid $white;
+  padding-bottom:1em;
+
+  li{
+    margin-bottom:1.5em;
+  }
+
+  a{
+    display:block;
+    text-align:center;
+    line-height:1.2em;
+    @include open-sans;
+    font-size:1.3em;
+
+    &:hover{
+      color:$white;
+    }
+  }
+}
+
+#contact-heads-up{
+  margin-bottom:2em;
+  border-bottom:1px solid $white;
+  padding-bottom:2em;
+
+  h5, h6{
+    @include rokkitt;
+    color:$white;
+    text-align:center;
+    line-height:1.4em;
+  }
+
+  h5{
+    font-size:1.8em;
+  }
+
+  h6{
+    font-size:1.5em;
+  }
+}
+
+#contact-hours{
+  padding-bottom:2em;
+  border-bottom:1px solid $white;
+  margin-bottom:2em;
+
+  h3{
+    @include rokkitt;
+    font-size:2em;
+    color:$lightBlue;
+  }
+
+  .underline{
+    width:em(200px);
+    border-top:1px solid $white;
+    display:block;
+    position:relative;
+    margin:em(1px) 0 em(10px) 0;
+  }
+
+  ul{
+    li{
+      @include rokkitt;
+      color:$lightBlue;
+      font-size:1.4em;
+      line-height:1.2em;
+      letter-spacing:1px;
+
+      span{
+        color:$white;
+      }
+    }
+  }
+}
+
+#contact-form{
+  padding-bottom:4em;
+
+  label{
+    @include open-sans;
+    color:$white;
+    font-size:1.2em;
+    line-height:1.2em;
+    margin-bottom:0.5em;
+
+    span{
+      margin-left:em(5px);
+    }
+  }
+
+  input[type="text"], input[type="email"], textarea{
+    width:100%;
+    margin-top:0.7em;
+    margin-bottom:2em;
+  }
+
+  input[type="submit"]{
+    @extend .btn;
+    @extend .btn-blue;
+  }
+}
+
+@include breakpoint($large){
+  #contact-info-container, #contact-form{
+    @include span(5);
+    @include push(0);
+    padding-top:4em;
+  }
+
+  #contact-info-container{
+    @include push(1);
+  }
+
+  #contact-form{
+    padding-left:em(20px);
+  }
+
+  #contact-info a, #contact-heads-up h5, #contact-heads-up h6{
+    text-align:left;
+  }
+
+}
+
+@include breakpoint($extra-large){
+  #contact-info-container, #contact-form{
+    @include span(4);
+    @include push(0);
+    padding-top:4em;
+  }
+
+  #contact-info-container{
+    @include push(2);
+  }
+} 
+

@@ -32,6 +32,8 @@
       wp_enqueue_style( 'blog_css', get_template_directory_uri() . '/dist/css/pages/blog.css');
     } else if( is_page_template('page-friends.php') ){
       wp_enqueue_style( 'friends_css', get_template_directory_uri() . '/dist/css/pages/friends.css');
+    } else if( is_page_template('page-contact.php') ){
+      wp_enqueue_style( 'contact_css', get_template_directory_uri() . '/dist/css/pages/contact.css');
     }
   }
 
