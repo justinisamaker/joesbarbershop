@@ -2,40 +2,78 @@
 
 #hero{
   @include span(12);
-  height:em(400px);
   background:url('/joesbarbershop/wp-content/themes/rockinbones/dist/img/joes-header.jpg') no-repeat top center;
   background-size:cover;
   border-bottom:1px solid $white;
+  padding-top:3em;
+  padding-bottom:3em;
 }
 
 #intro-copy{
-  @include span(8);
-  @include push(2);
+  @include span(10);
+  @include push(1);
   background:$white;
   padding-top:1em;
   padding-bottom:1.5em;
   text-align:center;
   opacity:0.8;
-  margin-top:5.5em;
+  transition: width, 0.3s, linear;
 
   h2{
     @include rokkitt;
     color:$lightBlue;
     text-align:center;
-    font-size:8em;
-    text-shadow:3px 3px 0px $black;
+    font-size:3em;
+    text-shadow:1px 1px 0px $black;
     line-height:1em;
     margin-bottom:-5px;
   }
 
   p{
-    width:80%;
+    width:90%;
     margin:0 auto;
     border-top:3px solid #EFEFEF;
     padding-top:em(7px);
     @include open-sans;
-    font-size:1.5em;
+    font-size:1em;
     line-height:1.3em;
+  }
+}
+
+@include breakpoint($medium){
+
+  #intro-copy{
+    @include span(8);
+    @include push(2);
+    padding-top:1em;
+    padding-bottom:1.5em;
+
+    h2{
+      font-size:4em;
+      text-shadow:2px 2px 0px $black;
+    }
+
+    p{
+      width:80%;
+      font-size:1.4em;
+    }
+  }
+
+}
+
+@include breakpoint($large){
+  #intro-copy{
+    h2{
+      font-size:6em;
+      text-shadow:3px 3px 0px $black;
+    }
+  }
+}
+
+@include breakpoint($extra-large){
+  #intro-copy{
+    @include span(6);
+    @include push(3);
   }
 }
 
@@ -44,8 +82,12 @@
    ========================================================================== */
 
 .home-mid-section{
-  padding-top:em(20px);
-  padding-bottom:em(20px);
+  // padding-top:em(20px);
+  // padding-bottom:em(20px);
+}
+
+@include breakpoint($large){
+
 }
 
 /* ==========================================================================
@@ -54,6 +96,8 @@
 
 #rundown{
   @include span(12);
+  padding-top:em(20px);
+  padding-bottom:em(20px);
   height:auto;
   background:url('/joesbarbershop/wp-content/themes/rockinbones/dist/img/dark-wall.jpg')repeat top center;
   border-bottom:1px solid $white;
@@ -61,9 +105,30 @@
   h2{
     @include rokkitt;
     color:$white;
-    font-size:2em;
+    font-size:1.3em;
+    line-height:1.2em;
     text-align:center;
     letter-spacing:1px;
+  }
+}
+
+@include breakpoint($medium){
+  #rundown{
+    h2{
+      font-size:1.7em;
+    }
+  }
+}
+
+@include breakpoint($large){
+  #rundown{
+    h2{
+      font-size:2em;
+    }
+
+    .responsive-break{
+      display:none;
+    }
   }
 }
 
@@ -72,23 +137,23 @@
    ========================================================================== */
 
 #shop-info{
-  @include span(6);
-  padding:0;
-  border-right:1px solid $white;
+  @include span(12);
 }
 
 .info-section{
   padding:2em;
-  padding-bottom:4em;
 
   &#prices{
-    margin-bottom:2em;
+    border-bottom:1px solid $white;
+  }
+
+  &#hours{
     border-bottom:1px solid $white;
   }
 
   h3{
     @include rokkitt;
-    font-size:4em;
+    font-size:2em;
     color:$lightBlue;
   }
 
@@ -97,20 +162,63 @@
     border-top:1px solid $white;
     display:block;
     position:relative;
-    margin:em(1px) 0 em(20px) 0;
+    margin:em(1px) 0 em(10px) 0;
   }
 
   ul{
     li{
       @include rokkitt;
       color:$lightBlue;
-      font-size:2em;
+      font-size:1.4em;
+      line-height:1.2em;
       letter-spacing:1px;
 
       span{
         color:$white;
       }
     }
+  }
+}
+
+@include breakpoint($medium){
+  .info-section{
+    @include span(6);
+    padding:2em 4em;
+    height:em(250px);
+
+    &#prices{
+      border-right:1px solid $white;
+    }
+  }
+}
+
+@include breakpoint($large){
+  #shop-info{
+    @include span(6);
+  }
+
+  .info-section{
+    @include span(12);
+    padding:2em 4em;
+    height:auto;
+
+    &#hours{
+      border-right:1px solid $white;
+    }
+
+    h3{
+      font-size:4em;
+    }
+
+    ul{
+      li{
+        font-size:1.7em;
+      }
+    }
+  }
+
+  .underline{
+    margin:em(1px) 0 em(20px) 0;
   }
 }
 

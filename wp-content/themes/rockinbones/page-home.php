@@ -18,7 +18,7 @@
       </section>
 
       <section id="rundown" class="home-mid-section">
-        <h2>First-come, first-served. Walk-in only. Last customer seated a half-hour before close.</h2>
+        <h2>First-come, first-served. Walk-in only. <br class="responsive-break"/>Last customer seated a half-hour before close.</h2>
       </section>
 
       <section id="shop-info" class="home-mid-section">
