@@ -1,15 +1,17 @@
 @import "../globals.scss";
 
 .barber-listing{
-  @include span(12);
+  @include span(10);
+  @include push(1);
   border-bottom:1px solid $white;
   padding-top:3em;
   padding-bottom:3em;
 }
 
 .barber-photo{
-  @include span(3);
-  @include push(1);
+  @include span(12);
+  @include push(0);
+  margin-bottom:em(10px);
 
   img{
     width:100%;
@@ -18,8 +20,7 @@
 }
 
 .barber-info{
-  @include span(4);
-  padding-right:2em;
+  @include span(12);
 
   h2{
     @include rokkitt;
@@ -39,9 +40,7 @@
 }
 
 .barber-hours{
-  @include span(3);
-  border-left:1px solid $white;
-  padding-left:2em;
+  @include span(12);
   height:100%;
 
   h2{
@@ -64,5 +63,29 @@
   }
 }
 
+@include breakpoint($medium){
+  .barber-listing{
+    @include span(12);
+    @include push(0);
+  }
+  
+  .barber-photo{
+    @include span(3);
+    @include push(1);
+    margin-bottom:0;
+  }
+
+  .barber-info{
+    @include span(4);
+    padding-right:2em;
+  }
+
+  .barber-hours{
+    @include span(3);
+    border-left:1px solid $white;
+    padding-left:2em;
+    height:100%;
+  }
+}
 
 
