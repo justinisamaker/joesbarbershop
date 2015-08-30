@@ -2,7 +2,7 @@
 @import "../modules/button.scss";
 
 #blog-container{
-  @include span(7);
+  @include span(10);
   @include push(1);
 
   padding-top:4em;
@@ -50,6 +50,7 @@
 
 #blog-sidebar{
   @include span(3);
+  display:none;
   border-left:1px solid $white;
   padding-left:2em;
   height:100%;
@@ -130,5 +131,16 @@
     &:hover{
       color:$lightBlue;
     }
+  }
+}
+
+@include breakpoint($medium){
+  #blog-container{
+    @include span(7);
+    @include push(1);
+  }
+
+  #blog-sidebar{
+    display:block;
   }
 }
