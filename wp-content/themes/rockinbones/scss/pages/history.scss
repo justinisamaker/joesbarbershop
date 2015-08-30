@@ -1,0 +1,83 @@
+@import "../globals.scss";
+
+.page-title{
+  margin-bottom:0.5em;
+}
+
+.history-item{
+  @include span(10);
+  @include push(1);
+  margin-bottom:4em;
+  padding-bottom:4em;
+  border-bottom:1px solid $white;
+
+  h3, h4{
+    text-align:center;
+    @include rokkitt;
+  }
+
+  h3{
+    font-size:2em;
+    color:$white;
+    margin-bottom:em(10px);
+  }
+
+  h4{
+    font-size:2em;
+    color:$lightBlue;
+  }
+
+  p{
+    @include open-sans;
+    color:$white;
+    margin-top:em(20px);
+    line-height:1.4em;
+    font-size:1.2em;
+  }
+}
+
+.history-photo, .history-title, .history-info{
+  @include span(12);
+}
+
+.history-photo{
+  img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+}
+
+@include breakpoint($medium){
+  .history-item{
+    @include span(6);
+    @include push(3);
+  }
+}
+
+@include breakpoint($large){
+  .history-title{
+    @include span(4);
+
+    h3, h4{
+      text-align:left;
+    }
+  }
+
+  .history-photo{
+    @include span(8);
+  }
+
+  .history-info{
+    @include span(8);
+    @include push(4);
+  }
+}
+
+@include breakpoint($extra-large){
+  .history-item{
+    @include span(4);
+    @include push(4);
+  }
+}
+
