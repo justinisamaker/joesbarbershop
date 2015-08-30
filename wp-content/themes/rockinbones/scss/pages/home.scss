@@ -312,37 +312,6 @@
   }
 }
 
-#location{
-  @include span(12);
-  padding:5em 0;
-  border-top:1px solid $white;
-  background:url('/joesbarbershop/wp-content/themes/rockinbones/dist/img/joes-sign.jpg') no-repeat center center;
-    background-size:cover;
-
-  a{
-    @include rokkitt;
-    color:$lightBlue;
-    display:block;
-    text-align:center;
-    font-size:2em;
-    line-height:1.8em;
-    letter-spacing:1px;
-
-    &:hover{
-      color:$black;
-    }
-  }
-}
-
-#location-container{
-  @include span(6);
-  @include push(3);
-  background:$white;
-  opacity:0.8;
-  padding-top:2em;
-  padding-bottom:2em;
-}
-
 @include breakpoint($medium){
 
   .event-info{
@@ -379,6 +348,69 @@
 }
 
 /* ==========================================================================
+   LOCATION INFO SECTION
+   ========================================================================== */
+
+#location{
+  @include span(12);
+  padding:5em 0;
+  border-top:1px solid $white;
+  background:url('/joesbarbershop/wp-content/themes/rockinbones/dist/img/joes-sign.jpg') no-repeat center center;
+    background-size:cover;
+
+  a{
+    @include rokkitt;
+    color:$lightBlue;
+    display:block;
+    text-align:center;
+    font-size:1.4em;
+    line-height:1.8em;
+    letter-spacing:1px;
+
+    &:hover{
+      color:$black;
+    }
+  }
+}
+
+#location-container{
+  @include span(10);
+  @include push(1);
+  background:$white;
+  opacity:0.8;
+  padding-top:2em;
+  padding-bottom:2em;
+  transition:width, 0.3s, linear;
+}
+
+@include breakpoint($medium){
+  #location{
+    a{
+      font-size:2em;
+    }
+  }
+
+  #location-container{
+    @include span(8);
+    @include push(2);
+  }
+}
+
+@include breakpoint($large){
+  #location-container{
+    @include span(6);
+    @include push(3);
+  }
+}
+
+@include breakpoint($extra-large){
+  #location-container{
+    @include span(4);
+    @include push(4);
+  }
+}
+
+/* ==========================================================================
    SOCIAL SECTION
    ========================================================================== */
 #home-social{
@@ -396,13 +428,18 @@
   a{
     position:relative;
     display:table-cell;
-    width:50px;
-    height:50px;
+    width:20px;
+    height:20px;
     padding:em(10px);
     border:1px solid $white;
     float:left;
     margin-right:em(5px);
-    transition:background, 0.1s, linear;
+    transition:all, 0.1s, linear;
+
+    img{
+      width:100%;
+      height:auto;
+    }
 
     &:hover{
       background:$lightBlue;
@@ -411,6 +448,24 @@
 
     &:last-child{
       margin-right:0;
+    }
+  }
+}
+
+@include breakpoint($medium){
+  #home-social-container{
+    a{
+      width:40px;
+      height:40px;
+    }
+  }
+}
+
+@include breakpoint($large){
+  #home-social-container{
+    a{
+      width:50px;
+      height:50px;
     }
   }
 }
