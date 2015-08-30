@@ -1,25 +1,18 @@
 @import "../globals.scss";
 
 #friends-container{
-  @include span(10);
-  @include push(1);
+  @include span(12);
+  @include push(0);
+  padding:0;
 }
 
 .friend-listing{
-  @include span(6);
+  @include span(12);
   border-bottom:1px solid $white;
   padding-top:3em;
   padding-bottom:3em;
   height:auto;
   min-height:em(275px);
-
-  &:nth-last-of-type(-n+2) {
-    border-bottom:0;
-  }
-
-  &:nth-child(odd){
-    border-right:1px solid $white;
-  }
 }
 
 .friend-photo{
@@ -58,5 +51,24 @@
   font-size:0.9em;
   top:em(10px);
   position:relative;
+}
+
+@include breakpoint($medium){
+  #friends-container{
+    @include span(10);
+    @include push(1);
+  }
+
+  .friend-listing{
+    @include span(6);
+
+    &:nth-last-of-type(-n+2) {
+      border-bottom:0;
+    }
+
+    &:nth-child(odd){
+      border-right:1px solid $white;
+    }
+  }
 }
 
